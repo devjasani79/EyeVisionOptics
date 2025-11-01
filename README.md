@@ -1,16 +1,91 @@
-# React + Vite
+# EyeVisionOptics - Premium Eye Care Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional and engaging landing page for premium eye care services, featuring immersive transitions and high-quality visual presentations of optical products and services.
 
-Currently, two official plugins are available:
+![EyeVisionOptics Preview](public/readme/preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- 👁️ Stunning showcase of premium optical products and lenses
+- 🎬 Professional video transitions highlighting eye care expertise
+- 🔍 Interactive lens technology demonstrations
+- 📱 Fully responsive design for all devices
+- ⚡ Optimized performance with modern web technologies
+- 🎨 Elegant UI/UX focused on eye care professionalism
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend Framework:** React 19
+- **Build Tool:** Vite 7
+- **Animation:** GSAP 3 with ScrollTrigger
+- **Styling:** Tailwind CSS 4
+- **Icons:** Lucide React
+- **Responsive Design:** React Responsive
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/devjasani79/EyeVisionOptics.git
+   cd mocktail
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## 🎨 Project Structure
+
+```
+mocktail/
+├── src/
+│   ├── components/
+│   │   ├── Hero.jsx        # Hero section with eye care introduction
+│   │   ├── Lenses.jsx      # Premium lens technology showcase
+│   │   ├── Products.jsx    # Eye care products display
+│   │   └── Navbar.jsx      # Professional navigation
+│   ├── App.jsx
+│   └── main.jsx
+├── public/
+│   ├── images/
+│   │   ├── bg/            # Background videos and images
+│   │   └── without bg/    # Transparent images
+│   └── fonts/            # Custom fonts
+└── constants/           # Project constants and configs
+```
+
+## 🎯 Key Features Explained
+
+### Premium Eye Care Presentation
+- High-quality video showcases of lens technologies
+- Smooth transitions between eye care product demonstrations
+- Professional animations highlighting optical features
+
+### Interactive Product Showcase
+- Detailed lens technology demonstrations
+- Interactive product comparisons
+- Engaging visual explanations of eye care benefits
+
+### Professional Design
+- Mobile-first approach for accessibility
+- Optimized product visualization
+- Professional eye care aesthetics and branding
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/devjasani79/EyeVisionOptics/issues).
