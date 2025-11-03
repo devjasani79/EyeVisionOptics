@@ -132,7 +132,7 @@ const Lenses = () => {
     >
       {/* Enhanced Gradient Overlay */}
       <div className="bg-overlay absolute inset-0 z-0">
-        <div className="absolute inset-0 pointer-events-none transition-opacity duration-1000 bg-gradient-to-b from-white/90 to-white/95" />
+        <div className="absolute inset-0 pointer-events-none transition-opacity duration-1000 bg-linear-to-b from-white/90 to-white/95" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,120,255,0.05)_0%,transparent_70%)] mix-blend-overlay pointer-events-none blur-xl" />
       </div>
 

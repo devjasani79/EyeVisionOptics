@@ -136,7 +136,7 @@ const Hero = () => {
                 Sharp. Clear. Visionary.
               </p>
 
-              <p className="hero-title font-modern-negra text-[12vw] sm:text-[4vw] md:text-[6vw] leading-none bg-gradient-to-r from-white via-[#66a6ff] to-[#0078FF]/60 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,120,255,0.2)] mt-4">
+              <p className="hero-title font-modern-negra text-[12vw] sm:text-[4vw] md:text-[6vw] leading-none bg-linear-to-r from-white via-[#66a6ff] to-[#0078FF]/60 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,120,255,0.2)] mt-4">
                 Smart Vision
               </p>
 
