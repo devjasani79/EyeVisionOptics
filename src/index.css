@@ -14,6 +14,39 @@
     --font-modern-negra: "Modern Negra", sans-serif;
     --font-serif: "DM Serif Text", serif;
 }
+/* === GLOBAL SMOOTHNESS & MOTION === */
+
+/* Enable GPU compositing for smoother animations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Prevent layout shift during hover animations */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Give pages that gentle flow when scrolling */
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+
+/* Fade in when page loads */
+body {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+  background-color: #000; /* adjust to your theme */
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 html,
 body {
@@ -85,6 +118,34 @@ body {
     .noisy {
         @apply absolute inset-0 size-full bg-[url("/images/noise.png")];
     }
+/* === Custom Glasses Cursor === */
+body, button, a, input, textarea {
+  cursor: url("/cursor-glasses.png") 16 16, auto;
+}
+
+/* Optional hover effect for clickable elements */
+a:hover, button:hover {
+  cursor: url("/cursor-glasses.png") 16 16, pointer;
+}
+/* === Custom Webkit Scrollbar === */
+/* === CUSTOM SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #66a6ff, #0078FF);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0078FF, #005ecc);
+}
+
 
     #hero {
         @apply relative z-10 min-h-dvh w-full border border-transparent;
@@ -232,4 +293,38 @@ body {
         }
     }
 
+}/* === GLOBAL CUSTOM GLASSES CURSOR === */
+
+/* Hide the default cursor */
+body {
+  cursor: none;
+}
+
+/* Create a custom cursor element */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+  z-index: 9999;
+  background: url('public/images/CustomCursor.svg') center/contain no-repeat;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+}
+.custom-cursor {
+  animation: appear 0.3s ease forwards;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: scale(0.5) translate(-50%, -50%); }
+  to { opacity: 1; transform: scale(1) translate(-50%, -50%); }
+}
+
+/* Add a fun hover effect for clickable elements */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor {
+  transform: translate(-50%, -50%) scale(1.2);
+  filter: brightness(1.3);
 }
