@@ -55,67 +55,32 @@ const Hero = () => {
         );
 
       // --- Video crossfade scroll animation ---
-      const videoXfade = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#lenses",
-          start: "top 95%",
-          end: "top 10%",
-          scrub: 1.8,
-        },
-      });
+    const videoXfade = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#lenses",
+    start: "top 90%",
+    end: "top 10%",
+    scrub: true,
+  },
+});
 
-      gsap.set(videoRef.current, {
-        opacity: 1,
-        scale: 1,
-        filter: "blur(0px) brightness(1)",
-      });
-      gsap.set(video2Ref.current, {
-        opacity: 0,
-        scale: 1.03,
-        filter: "blur(8px) brightness(0.7)",
-        zIndex: 2,
-      });
+// Initial states
+gsap.set(videoRef.current, { opacity: 1, scale: 1 });
+gsap.set(video2Ref.current, { opacity: 0, scale: 1.05 });
 
-      videoXfade
-        .to(videoRef.current, {
-          opacity: 0.9,
-          scale: 1.04,
-          filter: "blur(3px) brightness(0.9)",
-          ease: "power2.inOut",
-        }, 0)
-        .to(video2Ref.current, {
-          opacity: 0.4,
-          filter: "blur(6px) brightness(0.9)",
-          ease: "power1.inOut",
-        }, 0.25)
-        .to([videoRef.current, video2Ref.current], {
-          filter: "blur(10px) brightness(1.2)",
-          duration: 0.25,
-          ease: "power3.inOut",
-        }, 0.55)
-        .to([videoRef.current, video2Ref.current], {
-          filter: "blur(0px) brightness(1.05)",
-          duration: 0.35,
-          ease: "power2.out",
-        }, 0.8)
-        .to(video2Ref.current, {
-          opacity: 1,
-          scale: 1,
-          ease: "power2.inOut",
-        }, 0.9)
-        .to(videoRef.current, {
-          opacity: 0,
-          scale: 1.06,
-          ease: "power2.inOut",
-        }, 1.0)
-        .to("#hero-glow", {
-          opacity: 0.35,
-          scale: 1.05,
-          duration: 0.8,
-          ease: "sine.inOut",
-          yoyo: true,
-          repeat: 1,
-        }, 0.65);
+// Smooth minimal transition
+videoXfade
+  .to(videoRef.current, {
+    opacity: 0,
+    scale: 1.03,
+    ease: "none",
+  }, 0)
+  .to(video2Ref.current, {
+    opacity: 1,
+    scale: 1,
+    ease: "none",
+  }, 0);
+
 
       // --- Scroll fade hero content ---
       gsap.to(heroContentRef.current, {
