@@ -16,57 +16,45 @@ const navLinks = [
 	title: "Contact",
  },
 ];
-const lensLists = [
+const services = [
   {
-    name: "BlueGuard UV+ Lens",
-    country: "IN",
-    detail: "Anti-glare | Digital protection",
-    price: "₹2,499",
+    name: "Comprehensive Eye Examination",
+    detail: "Computerized vision testing and prescription consultation.",
+    price: "Starting at ₹499",
   },
   {
-    name: "Photochromic Transition Lens",
-    country: "IN",
-    detail: "Adapts to sunlight | All-weather clarity",
-    price: "₹3,299",
+    name: "Lens Replacement & Fitting",
+    detail: "Precision alignment and high-accuracy fitting for lasting comfort.",
+    price: "Starting at ₹799",
   },
   {
-    name: "Progressive Varifocal Lens",
-    country: "JP",
-    detail: "Multi-distance clarity | Premium coating",
-    price: "₹4,999",
+    name: "Frame Repair & Alignment",
+    detail: "Professional restoration for durability and comfort.",
+    price: "Starting at ₹399",
   },
   {
-    name: "High-Index Ultra Thin Lens",
-    country: "DE",
-    detail: "Lightweight | Ideal for higher powers",
-    price: "₹5,499",
+    name: "Contact Lens Trial & Care",
+    detail: "Trial fitting, consultation, and hygiene guidance.",
+    price: "Starting at ₹999",
   },
 ];
 
-const frameLists = [
+const collections = [
   {
-    name: "Ray-Ban Aviator",
-    country: "IT",
-    detail: "Classic metal frame | Timeless design",
-    price: "₹6,999",
+    name: "BlueGuard™ Digital Lenses",
+    detail: "Anti-glare & anti-fatigue protection for modern digital lifestyles.",
   },
   {
-    name: "Oakley Reactor",
-    country: "US",
-    detail: "Sport-fit | Shock resistant",
-    price: "₹5,499",
+    name: "Photochromic Smart Lenses",
+    detail: "Adaptive tint technology for sunlight and indoor balance.",
   },
   {
-    name: "Vincent Chase Minimalist",
-    country: "IN",
-    detail: "Sleek urban design | Lightweight acetate",
-    price: "₹2,999",
+    name: "High-Definition Progressive Lenses",
+    detail: "Seamless clarity across near, mid, and far distances.",
   },
   {
-    name: "John Jacobs Studio",
-    country: "UK",
-    detail: "Premium acetate | Designer edge",
-    price: "₹4,999",
+    name: "Signature Designer Frames",
+    detail: "Luxury acetate and titanium craftsmanship for refined style.",
   },
 ];
 
@@ -224,10 +212,8 @@ const sliderLists = [
 
 export {
  navLinks,
- lensLists,
- frameLists,
- cocktailLists,
- mockTailLists,
+collections,
+ services,
  profileLists,
  featureLists,
  goodLists,

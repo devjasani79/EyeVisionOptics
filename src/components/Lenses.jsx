@@ -1,154 +1,110 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { lensLists, frameLists } from "../../constants/index.js";
+import { collections, services } from "../../constants/index.js";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Lenses = () => {
   useGSAP(() => {
-    // 🎥 Background transition timing
-    const bgTransition = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#lenses",
-        start: "top center",
-        end: "top top",
-        scrub: 1,
+        start: "top 80%",
+        toggleActions: "play none none reverse",
       },
     });
 
-    // Add a white overlay that fades in as we scroll to the lenses section
-    bgTransition.to(".bg-overlay", {
-      opacity: 0.95,
-      duration: 1,
-      ease: "power2.inOut",
-    });
-
-    gsap.to("#lenses-bg", {
-      yPercent: -20,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#lenses",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
-    // 🍃 Parallax Leaves
-    const parallaxTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#lenses",
-        start: "top 85%",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
-    parallaxTimeline
-      .from("#l-left-leaf", { x: -100, y: 120, opacity: 0, ease: "power1.out" })
-      .from("#l-right-leaf", { x: 100, y: 120, opacity: 0, ease: "power1.out" }, "<");
-
-    // 🔠 Enhanced Titles and List items reveal
-    const titleTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#lenses",
-        start: "top center",
-        end: "+=300",
-        scrub: 1,
-      }
-    });
-
-    gsap.utils.toArray("#lenses h2").forEach((title, i) => {
-      titleTl.from(title, {
-        y: 100,
+    tl.from("#expertise-title h1", {
+      y: 60,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+    }).from(
+      "#expertise-title p",
+      {
+        y: 30,
         opacity: 0,
         duration: 1,
-        ease: "power4.out",
-      }, i * 0.2);
-    });
-
-    // Enhanced list item animations with stagger and scale
-    const listTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".list",
-        start: "top center",
-        end: "bottom center",
-        scrub: 1,
-      }
-    });
-
-    // Popular list items animation
-    gsap.utils.toArray(".popular li").forEach((item, i) => {
-      listTl.from(item, {
-        y: 50,
-        opacity: 0,
-        scale: 0.9,
-        duration: 0.8,
-        ease: "power3.out"
-      }, i * 0.1);
-    });
-
-    // Loved list items animation with slight delay
-    gsap.utils.toArray(".loved li").forEach((item, i) => {
-      listTl.from(item, {
-        y: 50,
-        opacity: 0,
-        scale: 0.9,
-        duration: 0.8,
-        ease: "power3.out"
-      }, i * 0.1 + 0.4); // Slight delay after popular items
-    });
+        ease: "power2.out",
+      },
+      "-=0.6"
+    );
   }, []);
 
   return (
     <section
       id="lenses"
-      className="relative min-h-screen w-full overflow-hidden text-[#0E0E0E] flex flex-col justify-center"
+      className="relative min-h-screen w-full flex flex-col justify-center items-center text-white overflow-hidden px-8 py-24"
     >
-      {/* Gradient Overlay for Lenses Section */}
-      <div className="bg-overlay absolute inset-0 z-0">
-        <div className="absolute inset-0 pointer-events-none transition-opacity duration-1000" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_0%,transparent_80%)] mix-blend-overlay pointer-events-none blur-xl" />
-      </div>
+      {/* Subtle gradient overlay for visibility */}
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60 backdrop-blur-[2px] z-0" /> */}
 
-      {/* 🍃 Decorative Elements */}
-      {/* <img
-        src="/images/without bg/cocktail-right-glass.png"
-        alt="left-leaf"
-        id="l-left-leaf"
-        className="pointer-events-none opacity-70 absolute left-0 md:bottom-0 -top-20 md:w-fit w-1/3"
-      />
-      <img
-        src="/images/without bg/cocktail-left-glass.png"
-        alt="right-leaf"
-        id="l-right-leaf"
-        className="pointer-events-none opacity-70 absolute right-0 md:bottom-0 -top-20 md:w-fit w-1/3"
+      {/* Optional: background video (comment out if not needed) */}
+      {/* <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-40"
+        src="/videos/vision_bg.mp4"
       /> */}
 
-      {/* 🔍 Lists */}
-     <div className="popular space-y-8 w-full md:w-fit glass-card p-8">
-  <h2 className="text-2xl font-serif text-gray-800">Most Popular Lenses:</h2>
-  <ul className="space-y-6">
-    {lensLists.map(({ name, country, detail, price }) => (
-      <li
-        key={name}
-        className="flex justify-between items-start hover:translate-x-2 transition-transform duration-300"
+      {/* Title */}
+      <div
+        id="expertise-title"
+        className="relative z-10 text-center max-w-3xl mx-auto mb-20"
       >
-        <div className="md:me-28">
-          <h3 className="font-modern-negra text-2xl text-[#0078FF] hover:text-[#004EA1] transition-colors">
-            {name}
-          </h3>
-          <p className="text-sm text-gray-700">{country} | {detail}</p>
-        </div>
-        <span className="text-xl font-semibold text-[#0E0E0E]">
-          - {price}
-        </span>
-      </li>
-    ))}
-  </ul>
-</div>
+        <h1 className="font-modern-negra text-4xl md:text-6xl text-[#66a6ff] mb-4 drop-shadow-lg">
+          Our Expertise in Vision
+        </h1>
+        <p className="text-gray-300 text-lg md:text-xl font-light">
+          Crafted to perfection — from precise eye exams to flawless frame
+          fitting, we blend technology with trust.
+        </p>
+      </div>
 
+      {/* Grid Cards */}
+      <div className="relative z-10 grid md:grid-cols-2 gap-12 max-w-6xl w-full">
+        {/* Services */}
+        <div className="glass-card bg-white/10 border border-white/20 rounded-3xl backdrop-blur-md p-10 hover:border-[#0078FF]/60 hover:shadow-[0_0_40px_rgba(0,120,255,0.2)] transition-all duration-500">
+          <h2 className="text-2xl md:text-3xl font-semibold text-[#66a6ff] mb-6">
+            Professional Services
+          </h2>
+          <ul className="space-y-6">
+            {services.map(({ name, detail, price }) => (
+              <li
+                key={name}
+                className="expertise-card border-b border-white/10 pb-4 hover:translate-x-2 hover:text-[#0078FF] transition-all duration-300"
+              >
+                <h3 className="font-modern-negra text-xl mb-1">{name}</h3>
+                <p className="text-gray-300 text-sm mb-1">{detail}</p>
+                <span className="text-sm text-[#66a6ff] font-medium">
+                  {price}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Collections */}
+        <div className="glass-card bg-white/10 border border-white/20 rounded-3xl backdrop-blur-md p-10 hover:border-[#0078FF]/60 hover:shadow-[0_0_40px_rgba(0,120,255,0.2)] transition-all duration-500">
+          <h2 className="text-2xl md:text-3xl font-semibold text-[#66a6ff] mb-6">
+            Lens & Frame Collections
+          </h2>
+          <ul className="space-y-6">
+            {collections.map(({ name, detail }) => (
+              <li
+                key={name}
+                className="expertise-card border-b border-white/10 pb-4 hover:translate-x-2 hover:text-[#0078FF] transition-all duration-300"
+              >
+                <h3 className="font-modern-negra text-xl mb-1">{name}</h3>
+                <p className="text-gray-300 text-sm">{detail}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </section>
   );
 };

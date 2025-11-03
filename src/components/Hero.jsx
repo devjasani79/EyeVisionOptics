@@ -1,8 +1,8 @@
+import { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -14,73 +14,129 @@ const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   useGSAP(() => {
-    gsap.set(videoRef.current, { opacity: 1, scale: 1 });
-    gsap.set(video2Ref.current, { opacity: 0, scale: 1.03 });
+    // ✅ Wait for fonts before running SplitText
+    document.fonts.ready.then(() => {
+      // --- Initial video setup ---
+      gsap.set(videoRef.current, { opacity: 1, scale: 1 });
+      gsap.set(video2Ref.current, { opacity: 0, scale: 1.03 });
 
-    const heroSplit = new SplitText(".hero-title", { type: "chars, words" });
-    const subSplit = new SplitText(".hero-subtitle", { type: "lines" });
+      // --- Split animations ---
+      const heroSplit = new SplitText(".hero-title", { type: "chars, words" });
+      const subSplit = new SplitText(".hero-subtitle", { type: "lines" });
 
-    heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
-    gsap.set(heroSplit.chars, { yPercent: 120, opacity: 0 });
-    gsap.set(subSplit.lines, { yPercent: 100, opacity: 0 });
-    gsap.set(".hero-cta", { y: 40, opacity: 0 });
+      gsap.set(heroSplit.chars, { yPercent: 120, opacity: 0 });
+      gsap.set(subSplit.lines, { yPercent: 100, opacity: 0 });
+      gsap.set(".hero-cta", { y: 40, opacity: 0 });
 
-    const intro = gsap.timeline();
-    intro
-      .to(heroSplit.chars, {
-        yPercent: 0,
-        opacity: 1,
-        duration: 1.6,
-        ease: "expo.out",
-        stagger: 0.05,
-      })
-      .to(
-        subSplit.lines,
-        {
-          opacity: 1,
+      const intro = gsap.timeline();
+      intro
+        .to(heroSplit.chars, {
           yPercent: 0,
-          duration: 1.4,
+          opacity: 1,
+          duration: 1.6,
           ease: "expo.out",
-          stagger: 0.08,
+          stagger: 0.05,
+        })
+        .to(
+          subSplit.lines,
+          {
+            opacity: 1,
+            yPercent: 0,
+            duration: 1.4,
+            ease: "expo.out",
+            stagger: 0.08,
+          },
+          "-=1.0"
+        )
+        .to(
+          ".hero-cta",
+          { y: 0, opacity: 1, duration: 0.8, ease: "back.out(1.4)" },
+          "-=0.5"
+        );
+
+      // --- Video crossfade scroll animation ---
+      const videoXfade = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#lenses",
+          start: "top 95%",
+          end: "top 10%",
+          scrub: 1.8,
         },
-        "-=1.0"
-      )
-      .to(
-        ".hero-cta",
-        { y: 0, opacity: 1, duration: 0.8, ease: "back.out(1.4)" },
-        "-=0.5"
-      );
+      });
 
-    const videoXfade = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#lenses",
-        start: "top 85%",
-        end: "top 30%",
-        scrub: 1,
-      },
+      gsap.set(videoRef.current, {
+        opacity: 1,
+        scale: 1,
+        filter: "blur(0px) brightness(1)",
+      });
+      gsap.set(video2Ref.current, {
+        opacity: 0,
+        scale: 1.03,
+        filter: "blur(8px) brightness(0.7)",
+        zIndex: 2,
+      });
+
+      videoXfade
+        .to(videoRef.current, {
+          opacity: 0.9,
+          scale: 1.04,
+          filter: "blur(3px) brightness(0.9)",
+          ease: "power2.inOut",
+        }, 0)
+        .to(video2Ref.current, {
+          opacity: 0.4,
+          filter: "blur(6px) brightness(0.9)",
+          ease: "power1.inOut",
+        }, 0.25)
+        .to([videoRef.current, video2Ref.current], {
+          filter: "blur(10px) brightness(1.2)",
+          duration: 0.25,
+          ease: "power3.inOut",
+        }, 0.55)
+        .to([videoRef.current, video2Ref.current], {
+          filter: "blur(0px) brightness(1.05)",
+          duration: 0.35,
+          ease: "power2.out",
+        }, 0.8)
+        .to(video2Ref.current, {
+          opacity: 1,
+          scale: 1,
+          ease: "power2.inOut",
+        }, 0.9)
+        .to(videoRef.current, {
+          opacity: 0,
+          scale: 1.06,
+          ease: "power2.inOut",
+        }, 1.0)
+        .to("#hero-glow", {
+          opacity: 0.35,
+          scale: 1.05,
+          duration: 0.8,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: 1,
+        }, 0.65);
+
+      // --- Scroll fade hero content ---
+      gsap.to(heroContentRef.current, {
+        yPercent: -100,
+        opacity: 0,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: "#lenses",
+          start: "top 85%",
+          end: "top 30%",
+          scrub: 1,
+        },
+      });
+
+      // Cleanup
+      return () => {
+        ScrollTrigger.getAll().forEach((s) => s.kill());
+        heroSplit.revert();
+        subSplit.revert();
+      };
     });
-
-    videoXfade
-      .to(videoRef.current, { opacity: 0, scale: 1.06, ease: "power2.inOut" }, 0)
-      .to(video2Ref.current, { opacity: 1, scale: 1, ease: "power2.inOut" }, 0);
-
-    gsap.to(heroContentRef.current, {
-      yPercent: -100,
-      opacity: 0,
-      ease: "power2.inOut",
-      scrollTrigger: {
-        trigger: "#lenses",
-        start: "top 85%",
-        end: "top 30%",
-        scrub: 1,
-      },
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((s) => s.kill());
-      heroSplit.revert();
-      subSplit.revert();
-    };
   }, []);
 
   return (
@@ -88,7 +144,7 @@ const Hero = () => {
       {/* === BACKGROUND VIDEOS === */}
       <div
         id="background-container"
-        className="fixed inset-0 w-full h-full opacity-45 z-0 pointer-events-none"
+        className="fixed inset-0 w-full h-full opacity-55 z-0 pointer-events-none"
       >
         <video
           ref={videoRef}
@@ -136,23 +192,24 @@ const Hero = () => {
                 Sharp. Clear. Visionary.
               </p>
 
-              <p className="hero-title font-modern-negra text-[12vw] sm:text-[4vw] md:text-[6vw] leading-none bg-gradient-to-r from-white via-[#66a6ff] to-[#0078FF]/60 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,120,255,0.2)] mt-4">
-                Smart Vision
+              <p className="hero-title font-modern-negra text-[17vw] sm:text-[8vw] md:text-[8vw] leading-none mt-4 text-white/80">
+                Where{" "}
+                <span className="text-[#0078FF]/80">Vision</span> Meets{" "}
+                <span className="text-[#0078FF]/80">Virtue</span>
               </p>
 
-              <p className="hero-subtitle hover:text-[#0078FF] transition-all  font-serif text-base sm:text-xl md:text-2xl text-white/80 leading-relaxed hidden md:block">
+
+              <p className="hero-subtitle hover:text-[#0078FF] transition-all font-serif text-base sm:text-xl md:text-2xl text-white/80 leading-relaxed hidden md:block">
                 See Beyond Ordinary
               </p>
             </div>
 
-
             {/* RIGHT SECTION */}
             <div className="hero-cta w-full lg:w-1/2 text-center lg:text-left space-y-4">
-              <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
-               Curating an unparalleled vision experience through precision and uncompromising refinement.
+              <p className="text-white/80 text-md sm:text-base md:text-xl leading-relaxed max-w-md mx-auto lg:mx-0">
+                Curating an unparalleled vision experience through precision and uncompromising refinement.
               </p>
 
-              {/* Explore Lenses + Arrow */}
               <a
                 href="#lenses"
                 className="group inline-flex items-center gap-2 font-semibold text-white/80 hover:text-[#0078FF] transition-colors duration-300 mt-2"
