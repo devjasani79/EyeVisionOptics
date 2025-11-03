@@ -42,7 +42,7 @@ const About = () => {
     <>
      <section id="about"  className="relative min-h-screen w-full flex flex-col justify-center items-center text-white overflow-hidden px-3 py-1">
 
-     <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/50 to-black/60 backdrop-blur-[150px] z-0" />
+     <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/50 to-black/60 backdrop-blur-[45px] z-0" />
     <div
       id="about"
       className="relative min-h-screen py-8 container mx-auto px-1 2xl:px-0 text-white"

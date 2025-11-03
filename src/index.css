@@ -63,24 +63,25 @@ body {
     }
 
     nav {
-        @apply fixed z-50 w-full;
+  @apply fixed w-full z-50;
+}
 
-        div {
-            @apply flex md:flex-row flex-col md:justify-between items-center gap-5 py-5 lg:px-0 px-5 container mx-auto;
-        }
+nav div {
+  @apply flex md:flex-row flex-col md:justify-between items-center gap-4 py-3 container mx-auto;
+}
 
-        p {
-            @apply font-modern-negra text-3xl -mb-2;
-        }
+nav a {
+  @apply cursor-pointer text-sm md:text-base text-nowrap;
+}
 
-        a {
-            @apply cursor-pointer text-nowrap md:text-base text-sm;
-        }
+nav ul {
+  @apply flex justify-center items-center gap-6 lg:gap-10;
+}
 
-        ul {
-            @apply flex-center lg:gap-12 gap-7;
-        }
-    }
+nav p {
+  @apply font-modern-negra text-2xl;
+}
+
 
     .noisy {
         @apply absolute inset-0 size-full bg-[url("/images/noise.png")];

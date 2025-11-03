@@ -109,7 +109,7 @@ videoXfade
       {/* === BACKGROUND VIDEOS === */}
       <div
         id="background-container"
-        className="fixed inset-0 w-full h-full opacity-55 z-0 pointer-events-none"
+        className="fixed inset-0 w-full h-full opacity-65 z-0 pointer-events-none"
       >
         <video
           ref={videoRef}
@@ -157,27 +157,27 @@ videoXfade
                 Sharp. Clear. Visionary.
               </p>
 
-              <p className="hero-title font-modern-negra text-[17vw] sm:text-[8vw] md:text-[8vw] leading-none mt-4 text-white/80">
+              <p className="hero-title font-modern-negra text-[17vw] sm:text-[8vw] md:text-[8vw] leading-none mt-4 text-white/90">
                 Where{" "}
                 <span className="text-[#0078FF]/80">Vision</span> Meets{" "}
                 <span className="text-[#0078FF]/80">Virtue</span>
               </p>
 
 
-              <p className="hero-subtitle hover:text-[#0078FF] transition-all font-serif text-base sm:text-xl md:text-2xl text-white/80 leading-relaxed hidden md:block">
+              <p className="hero-subtitle hover:text-[#0078FF] transition-all font-serif text-base sm:text-xl md:text-2xl text-white/90 leading-relaxed hidden md:block">
                 See Beyond Ordinary
               </p>
             </div>
 
             {/* RIGHT SECTION */}
             <div className="hero-cta w-full lg:w-1/2 text-center lg:text-left space-y-4">
-              <p className="text-white/80 text-md sm:text-base md:text-xl leading-relaxed max-w-md mx-auto lg:mx-0">
+              <p className="text-white/90 text-md sm:text-base md:text-xl leading-relaxed max-w-md mx-auto lg:mx-0">
                 Curating an unparalleled vision experience through precision and uncompromising refinement.
               </p>
 
               <a
                 href="#lenses"
-                className="group inline-flex items-center gap-2 font-semibold text-white/80 hover:text-[#0078FF] transition-colors duration-300 mt-2"
+                className="group inline-flex items-center gap-2 font-semibold text-[#0078FF] transition-colors duration-300 mt-2"
               >
                 Explore Lenses
               </a>
