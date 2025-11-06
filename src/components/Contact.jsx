@@ -43,11 +43,24 @@ const Contact = () => {
   });
 
   return (
-    <footer id="contact">
-      <img src="/images/footer-right-glow.png" alt="optic-glow-right" id="f-right-leaf" />
-      <img src="/images/footer-left-glow.png" alt="optic-glow-left" id="f-left-leaf" />
+    <footer id="contact" className="relative min-h-screen w-full overflow-hidden bg-black">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-30"
+        src="public/images/bg/bgvideo7.mp4"
+      />
+      
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-radial from-black/90 via-black/80 to-black/90 backdrop-blur-sm z-0"></div>
 
-      <div className="content">
+      <img src="/images/footer-right-glow.png" alt="optic-glow-right" id="f-right-leaf" className="z-1" />
+      <img src="/images/footer-left-glow.png" alt="optic-glow-left" id="f-left-leaf" className="z-1" />
+
+      <div className="content relative z-2">
         <h2>{storeInfo.heading}</h2>
 
         <div>
@@ -65,7 +78,7 @@ const Contact = () => {
         </div>
 
         <div>
-          <h3>Clinic Hours</h3>
+          <h3>Shop Hours</h3>
           {openingHours.map((time) => (
             <p key={time.day}>
               {time.day} : {time.time}
