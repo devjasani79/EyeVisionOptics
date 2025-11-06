@@ -43,7 +43,7 @@ const Contact = () => {
   });
 
   return (
-    <footer id="contact" className="relative min-h-screen w-full overflow-hidden bg-black">
+    <footer id="contact" className="relative min-h-screen w-full flex flex-col justify-center items-center text-white overflow-hidden px-3 py-1">
       {/* Background Video */}
       <video
         autoPlay
@@ -57,8 +57,6 @@ const Contact = () => {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-radial from-black/90 via-black/80 to-black/90 backdrop-blur-sm z-0"></div>
 
-      <img src="/images/footer-right-glow.png" alt="optic-glow-right" id="f-right-leaf" className="z-1" />
-      <img src="/images/footer-left-glow.png" alt="optic-glow-left" id="f-left-leaf" className="z-1" />
 
       <div className="content relative z-2">
         <h2>{storeInfo.heading}</h2>
