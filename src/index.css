@@ -44,17 +44,29 @@ body {
 }
 
 @utility radial-gradient {
-    background: radial-gradient(circle at center,
+    background: radial-gradient(
+            circle at center,
             #434343 0%,
             #000 50%,
-            transparent 100%);
+            transparent 100%
+    );
 }
 
+/* 🔮 Utility: refined mask style */
+/* @utility masked-img {
+  mask-image: url("/images/mask-img3.png");
+  -webkit-mask-image: url("/images/mask-img3.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 40%;
+  transition: mask-size 1s ease, transform 1s ease;
+} */
+
 @utility masked-img {
-    mask-image: url("/images/mask-img.png");
+    mask-image: url("/images/mask-img5.png");
     mask-repeat: no-repeat;
     mask-position: center;
-    mask-size: 50%;
+    mask-size: 30%;
 }
 
 @layer components {
@@ -270,4 +282,57 @@ nav p {
         }
     }
 
+
+
+    #Vision { 
+  @apply relative flex flex-col items-center justify-center min-h-dvh px-6 md:px-10 mt-20 bg-black text-white overflow-hidden;
+
+  background: radial-gradient(ellipse at center, #0a0a0a 0%, #000 100%);
+  isolation: isolate;
+
+       
+  h2 {
+    @apply relative text-center font-modern-negra mb-10 tracking-tight text-[#404040];
+    font-size: clamp(5rem, 19vw, 18rem);
+    letter-spacing: -0.03em;
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+    transition: color 0.6s ease, transform 0.6s ease;
+  }
+
+  h2:hover {
+    color: #e0e0e0;
+    transform: scale(1.03);
+  }
+
+        .content {
+            @apply flex md:flex-row flex-col justify-between md:mb-16 md:mt-0 mt-40 gap-10;
+        }
+
+        .vision-img {
+            @apply md:w-[65vw] w-full h-[50vh] md:h-[65vh] rounded-4xl overflow-hidden absolute top-0 md:top-1/2 md:-translate-y-1/2 left-1/2 -translate-x-1/2;
+        }
+
+        .masked-container {
+            h2 {
+                @apply  text-4xl md:text-5xl font-modern-negra text-center mb-10 text-white mt-32;
+            }
+
+            div {
+                @apply opacity-0 md:px-0 px-5 space-y-5 absolute md:bottom-5 bottom-52 left-1/2 -translate-x-1/2;
+
+                h3 {
+                    @apply md:text-5xl text-2xl text-center font-serif md:w-full w-80 text-white;
+                }
+
+                p {
+                    @apply text-lg text-center;
+                }
+            }
+        }
+    } 
+
+/*  */
+
+
 }
+

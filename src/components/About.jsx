@@ -51,7 +51,7 @@ const About = () => {
 
       {/* Header */}
       <div className="mb-16 text-center relative z-10">
-        <p className="badge inline-block rounded-full bg-[#0078FF] text-white px-5 py-2 text-sm font-medium mb-6">
+        <p className="badge inline-block rounded-full bg-[#0078FF] text-white px-5 py-2 text-sm font-medium mb-6 animate-pulse">
           Why EyeVisionOptics
         </p>
         <h2 className="text-5xl md:text-6xl font-modern-negra leading-tight text-[#66a6ff] drop-shadow-lg">
@@ -87,7 +87,7 @@ const About = () => {
       <div className="content grid grid-cols-1 lg:grid-cols-12 gap-10 my-16 relative z-10">
         <div className="md:col-span-7 space-y-6">
           <h3 className="text-4xl md:text-5xl font-modern-negra text-white leading-snug">
-            Precision. Comfort. Personalization.
+            Precision  Comfort  Personalization 
           </h3>
           <p className="text-lg text-gray-300 leading-relaxed">
             EyeVisionOptics is built on the belief that great vision care should
@@ -107,7 +107,7 @@ const About = () => {
             <span className="text-[#66a6ff] font-medium">
               Varilux Progressive Lenses
             </span>{" "}
-            — engineered for seamless transition and guaranteed acclimation.
+             engineered for seamless transition and guaranteed acclimation.
             Every frame, every fit, every finish is a reflection of the care
             we put into your experience.
           </p>

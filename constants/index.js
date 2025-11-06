@@ -23,17 +23,17 @@ const services = [
     price: "Starting at ₹499",
   },
   {
-    name: "Lens Replacement & Fitting",
+    name: "Lens Replacement / Lens Fitting",
     detail: "Precision alignment and high-accuracy fitting for lasting comfort.",
     price: "Starting at ₹799",
   },
   {
-    name: "Frame Repair & Alignment",
+    name: "Frame Repair / Alignment",
     detail: "Professional restoration for durability and comfort.",
     price: "Starting at ₹399",
   },
   {
-    name: "Contact Lens Trial & Care",
+    name: "Contact Lens Trial / Care",
     detail: "Trial fitting, consultation, and hygiene guidance.",
     price: "Starting at ₹999",
   },
@@ -58,59 +58,6 @@ const collections = [
   },
 ];
 
-const cocktailLists = [
- {
-	name: "Chapel Hill Shiraz",
-	country: "AU",
-	detail: "Battle",
-	price: "$10",
- },
- {
-	name: "Caten Malbee",
-	country: "AU",
-	detail: "Battle",
-	price: "$49",
- },
- {
-	name: "Rhino Pale Ale",
-	country: "CA",
-	detail: "750 ml",
-	price: "$20",
- },
- {
-	name: "Irish Guinness",
-	country: "IE",
-	detail: "600 ml",
-	price: "$29",
- },
-];
-
-const mockTailLists = [
- {
-	name: "Tropical Bloom",
-	country: "US",
-	detail: "Battle",
-	price: "$10",
- },
- {
-	name: "Passionfruit Mint",
-	country: "US",
-	detail: "Battle",
-	price: "$49",
- },
- {
-	name: "Citrus Glow",
-	country: "CA",
-	detail: "750 ml",
-	price: "$20",
- },
- {
-	name: "Lavender Fizz",
-	country: "IE",
-	detail: "600 ml",
-	price: "$29",
- },
-];
 
 const profileLists = [
  {
@@ -128,18 +75,22 @@ const profileLists = [
 ];
 
 const featureLists = [
- "Perfectly balanced blends",
- "Garnished to perfection",
- "Ice-cold every time",
- "Expertly shaken & stirred",
+  "Advanced anti-glare and UV protection lenses",
+  "Digitally optimized progressive designs",
+  "Precision edge-cutting for flawless alignment",
+  "Custom lens tinting for all light conditions",
+  "Blue-light filtering for digital screen protection",
 ];
 
 const goodLists = [
- "Handpicked ingredients",
- "Signature techniques",
- "Bartending artistry in action",
- "Freshly muddled flavors",
+  "Comprehensive eye health assessments",
+  "Computerized vision testing and diagnostics",
+  "Exclusive designer frames curated for comfort and style",
+  "Protective eyewear engineered for daily use",
+  "Expert lens fitting and frame adjustments",
 ];
+
+
 
 const storeInfo = {
  heading: "Where to Find Us",
