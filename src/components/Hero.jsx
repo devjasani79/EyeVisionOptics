@@ -14,7 +14,6 @@ const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   useGSAP(() => {
-    // ✅ Wait for fonts before running SplitText
     document.fonts.ready.then(() => {
       // --- Initial video setup ---
       gsap.set(videoRef.current, { opacity: 1, scale: 1 });

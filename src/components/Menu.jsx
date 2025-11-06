@@ -50,7 +50,7 @@ const Menu = () => {
     }, [currentMain, currentSub]);
 
     return (
-        <section id="menu" aria-labelledby="menu-heading" className="relative min-h-screen w-full radial-gradient">
+        <section id="menu" aria-labelledby="menu-heading" className="relative min-h-screen w-full py-8 ">
 
 
             <h1 id="menu-heading" className="text-3xl md:text-4xl font-serif text-white mb-3 py-10 relative z-10">

@@ -332,7 +332,7 @@ body {
     /*  */
     #menu { @apply relative flex flex-col items-center justify-center min-h-dvh px-6 md:px-10 bg-black text-white overflow-hidden;
 
-        background: radial-gradient(ellipse at center, #0a0a0a 0%, #000 100%);
+        /* background: radial-gradient(ellipse at center, #0a0a0a 0%, #000 100%); */
 
 
      
@@ -363,36 +363,38 @@ body {
 
     }
 
-   #contact {
-        @apply relative md:mt-20 mt-0 px-4 text-center w-full overflow-hidden radial-gradient;
+ #contact {
+  @apply relative w-full text-center overflow-hidden flex flex-col justify-center items-center;
 
-        #f-left-leaf {
-            @apply absolute bottom-0 left-0 pointer-events-none lg:w-fit w-1/3;
-        }
+  /* Luxurious radial background under the video for depth */
+  background: radial-gradient(ellipse at center, #0a0a0a 0%, #000 100%);
 
-        #f-right-leaf {
-            @apply absolute top-0 right-0 pointer-events-none hidden lg:block;
-        }
+  .content {
+    @apply container mx-auto py-16 lg:py-24 2xl:py-32 flex flex-col justify-center gap-10;
 
-        .content {
-            @apply container mx-auto lg:py-14 2xl:py-32 py-16 flex flex-col justify-between gap-10 min-h-dvh;
-
-            h2 {
-                @apply lg:text-6xl 2xl:text-8xl text-5xl font-modern-negra md:translate-y-0 translate-y-5;
-            }
-
-            h3 {
-                @apply uppercase xl:text-base 2xl:text-lg text-base mb-2;
-            }
-
-            p {
-                @apply lg:text-2xl 2xl:text-3xl text-sm;
-            }
-        }
-
-        .drink-img {
-            @apply absolute bottom-0 right-0 lg:w-96 w-1/3 pointer-events-none;
-        }
+    h2 {
+      @apply lg:text-6xl 2xl:text-8xl text-5xl font-modern-negra md:translate-y-0 translate-y-5 tracking-wide text-white;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
     }
+
+    h3 {
+      @apply uppercase xl:text-base 2xl:text-lg text-base mb-2 text-gray-300 font-semibold tracking-widest;
+    }
+
+    p {
+      @apply lg:text-2xl 2xl:text-3xl text-sm text-gray-200;
+    }
+  }
+
+  video {
+    filter: brightness(0.6) contrast(1.1) saturate(1.1);
+    transform: scale(1.01);
+  }
+
+  .drink-img {
+    @apply absolute bottom-0 right-0 lg:w-96 w-1/3 opacity-70 pointer-events-none;
+  }
+}
+
 
 }

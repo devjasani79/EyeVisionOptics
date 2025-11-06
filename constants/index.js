@@ -8,7 +8,7 @@ const navLinks = [
 	title: "About Us",
  },
  {
-	id: "work",
+	id: "menu",
 	title: "Shades",
  },
  {
@@ -93,11 +93,11 @@ const goodLists = [
 const storeInfo = {
   heading: "Where to Find Us",
   address:
-    "Shop No 1, Samadhan Building, 759/35, Bhandarkar Rd, near Oakwood Hotel, Deccan Gymkhana, Pune, Maharashtra 411004",
+    "Shop No 3, Samadhan Building, 759/35, Bhandarkar Rd, near Oakwood Hotel, Deccan Gymkhana, Pune, Maharashtra 411004",
   location: "Baker’s Basket Complex, Deccan Gymkhana",
   contact: {
     phone: "093722 24060",
-    email: "contact@eyevisionoptics.in",
+    email: "eyevisionoptics@gmail.com",
   },
 };
 
@@ -111,12 +111,12 @@ const socials = [
   {
     name: "Instagram",
     icon: "/images/insta.png",
-    url: "https://www.instagram.com/eyevisionoptics",
+    url: "https://www.instagram.com/eyevision_optics/",
   },
   {
     name: "Facebook",
     icon: "/images/fb.png",
-    url: "https://www.facebook.com/eyevisionoptics",
+    url: "https://www.facebook.com/EyeVisionOptics/",
   },
 
 ];

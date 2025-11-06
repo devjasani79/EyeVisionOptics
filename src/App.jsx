@@ -4,22 +4,21 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Lenses from './components/Lenses';
 import About from './components/About';
-// import Visionary from './components/Visionary';
 import Vision from './components/Vision';
 import Menu from './components/Menu';
 import Contact from './components/Contact';
-gsap.registerPlugin(ScrollTrigger,SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const App = () => {
   return (
     <main>
-      <Navbar/>
-      <Hero/>
-      <Lenses/>
+      <Navbar />
+      <Hero />
+      <Lenses />
       <About />
-    <Vision/>
-      <Menu/>
-      <Contact/>
+      <Vision />
+      <Menu />
+      <Contact />
     </main>
   )
 }

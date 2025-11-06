@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Lenses = () => {
   useGSAP(() => {
+    
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#lenses",
