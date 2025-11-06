@@ -6,6 +6,8 @@ import Lenses from './components/Lenses';
 import About from './components/About';
 // import Visionary from './components/Visionary';
 import Vision from './components/Vision';
+import Menu from './components/Menu';
+import Contact from './components/Contact';
 gsap.registerPlugin(ScrollTrigger,SplitText);
 
 const App = () => {
@@ -16,7 +18,8 @@ const App = () => {
       <Lenses/>
       <About />
     <Vision/>
-      {/* <Visionary/> */}
+      <Menu/>
+      <Contact/>
     </main>
   )
 }

@@ -69,14 +69,14 @@ const About = () => {
       <div className="top-grid grid grid-cols-1 xl:grid-cols-12 gap-5 mb-10 md:px-0 px-5 relative z-10">
         <div className="md:col-span-4 rounded-3xl overflow-hidden h-72 relative">
           <img
-            src="/images/abt1.png"
+            src="/images/about/abt1.png"
             alt="Eye testing process"
             className="object-cover w-full h-full"
           />
         </div>
         <div className="md:col-span-8 rounded-3xl overflow-hidden h-72 relative">
           <img
-            src="/images/abt2.png"
+            src="/images/about/abt2.png"
             alt="Eyewear collection"
             className="object-cover w-full h-full"
           />
@@ -127,14 +127,14 @@ const About = () => {
       <div className="bottom-grid grid grid-cols-1 md:grid-cols-12 gap-5 md:px-0 px-5 relative z-10">
         <div className="md:col-span-8 rounded-3xl overflow-hidden h-72 relative">
           <img
-            src="/images/abt3.png"
+            src="/images/about/abt3.png"
             alt="Lens fitting process"
             className="object-cover w-full h-full"
           />
         </div>
         <div className="md:col-span-4 rounded-3xl overflow-hidden h-72 relative">
           <img
-            src="/images/abt4.png"
+            src="/images/about/abt4.png"
             alt="Customer consultation"
             className="object-cover w-full h-full"
           />

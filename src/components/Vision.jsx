@@ -26,8 +26,8 @@ const Vision = () => {
  })
  
  return (
-	<div id="Vision" >
-	 <div className="container mx-auto h-full">
+	<div id="Vision" className="relative min-h-screen w-full flex flex-col justify-center items-center text-white overflow-hidden px-3 py-1">
+	 <div className="container  h-full">
 		<h2 className="will-fade">VISIONARY</h2>
 		
 		<div className="content">
@@ -42,7 +42,7 @@ const Vision = () => {
 		 
 		 <div className="vision-img">
 			<img
-				src="/images/under-img1.jpg"
+				src="/images/vision/under-img1.jpg"
 				alt="cocktail"
 				className="abs-center masked-img size-full object-contain"
 			/>

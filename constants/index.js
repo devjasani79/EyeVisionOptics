@@ -1,6 +1,6 @@
 const navLinks = [
  {
-	id: "Glasses",
+	id: "lenses",
 	title: "Visions",
  },
  {
@@ -78,7 +78,6 @@ const featureLists = [
   "Advanced anti-glare and UV protection lenses",
   "Digitally optimized progressive designs",
   "Precision edge-cutting for flawless alignment",
-  "Custom lens tinting for all light conditions",
   "Blue-light filtering for digital screen protection",
 ];
 
@@ -86,90 +85,162 @@ const goodLists = [
   "Comprehensive eye health assessments",
   "Computerized vision testing and diagnostics",
   "Exclusive designer frames curated for comfort and style",
-  "Protective eyewear engineered for daily use",
-  "Expert lens fitting and frame adjustments",
+ "Expert lens fitting and frame adjustments",
 ];
 
 
 
 const storeInfo = {
- heading: "Where to Find Us",
- address: "456, Raq Blvd. #404, Los Angeles, CA 90210",
- contact: {
-	phone: "(555) 987-6543",
-	email: "hello@jsmcocktail.com",
- },
+  heading: "Where to Find Us",
+  address:
+    "Shop No 1, Samadhan Building, 759/35, Bhandarkar Rd, near Oakwood Hotel, Deccan Gymkhana, Pune, Maharashtra 411004",
+  location: "Baker’s Basket Complex, Deccan Gymkhana",
+  contact: {
+    phone: "093722 24060",
+    email: "contact@eyevisionoptics.in",
+  },
 };
 
 const openingHours = [
- { day: "Mon–Thu", time: "11:00am – 12am" },
- { day: "Fri", time: "11:00am – 2am" },
- { day: "Sat", time: "9:00am – 2am" },
- { day: "Sun", time: "9:00am – 1am" },
+  { day: "Mon – Fri", time: "10:00am – 9:00pm" },
+  { day: "Saturday", time: "10:00am – 9:00pm" },
+  { day: "Sunday", time: "10:00am – 6:00pm" },
 ];
 
 const socials = [
- {
-	name: "Instagram",
-	icon: "/images/insta.png",
-	url: "#",
- },
- {
-	name: "X (Twitter)",
-	icon: "/images/x.png",
-	url: "#",
- },
- {
-	name: "Facebook",
-	icon: "/images/fb.png",
-	url: "#",
- },
+  {
+    name: "Instagram",
+    icon: "/images/insta.png",
+    url: "https://www.instagram.com/eyevisionoptics",
+  },
+  {
+    name: "Facebook",
+    icon: "/images/fb.png",
+    url: "https://www.facebook.com/eyevisionoptics",
+  },
+
 ];
 
-const sliderLists = [
- {
-	id: 1,
-	name: "Classic Mojito",
-	image: "/images/drink1.png",
-	title: "Simple Ingredients, Bold Flavor",
-	description:
-	 "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
- },
- {
-	id: 2,
-	name: "Raspberry Mojito",
-	image: "/images/drink2.png",
-	title: "A Zesty Classic That Never Fails",
-	description:
-	 "The Margarita is a classic that balances tangy lime, smooth tequila, and a touch of sweetness. Shaken, frozen, or on the rocks—it’s always crisp & refreshing.",
- },
- {
-	id: 3,
-	name: "Violet Breeze",
-	image: "/images/drink3.png",
-	title: "Simple Ingredients, Bold Flavor",
-	description:
-	 "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
- },
- {
-	id: 4,
-	name: "Curacao Mojito",
-	image: "/images/drink4.png",
-	title: "Crafted With Care, Poured With Love",
-	description:
-	 "Each cocktail is made with fresh ingredients and a passion for perfecting every pour, whether you're celebrating or simply relaxing.",
- },
+export { storeInfo, openingHours, socials };
+
+
+
+
+const allLenses = [
+  {
+    id: 1,
+    name: "Aviator Classics",
+    variants: [
+      {
+        name: "Gold Frame Polarized",
+        title: "Iconic Golden Edge",
+        description:
+          "Timeless gold aviators with polarized lenses for maximum glare reduction — perfect for everyday wear and travel.",
+        image: "/images/lenses/avaitor2.png",
+      },
+      {
+        name: "Silver Mirror",
+        title: "Refined Metallic Finish",
+        description:
+          "A sleek silver mirror variant offering crisp reflection and modern edge without sacrificing comfort.",
+        image: "/images/lenses/avaitor3.png",
+      },
+      {
+        name: "Matte Black",
+        title: "Subtle Power, Sleek Look",
+        description:
+          "Classic matte black aviators — understated sophistication for confident personalities.",
+        image: "/images/lenses/avaitor1.png",
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Wayfarer Edge",
+    variants: [
+      {
+        name: "Gloss Black",
+        title: "Bold Everyday Icon",
+        description:
+          "Glossy black acetate frames that define versatility and everyday style for any outfit.",
+        image: "/images/lenses/wayfarer-black.png",
+      },
+      {
+        name: "Tortoise Shell",
+        title: "Retro Warmth, Modern Edge",
+        description:
+          "The timeless tortoise pattern reborn — elegant warmth paired with durable hinges.",
+        image: "/images/lenses/wayfarer-tortoise.png",
+      },
+      {
+        name: "Frost Clear",
+        title: "Minimal Transparency",
+        description:
+          "Transparent frames offering a crisp, minimalist look that blends effortlessly with any attire.",
+        image: "/images/lenses/wayfarer-clear.png",
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Rimless Visionaire",
+    variants: [
+      {
+        name: "Titanium Silver",
+        title: "Light as Air",
+        description:
+          "Rimless titanium silver frames designed for ultra-light comfort and professional appeal.",
+        image: "/images/lenses/rimless-gray.png",
+      },
+      {
+        name: "Rose Gold",
+        title: "Elegant Transparency",
+        description:
+          "Rose gold accents and near-invisible edges — minimalist design meets timeless beauty.",
+        image: "/images/lenses/rimless-gold.png",
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "Round RetroCurve",
+    variants: [
+      {
+        name: "Wood Grain",
+        title: "Organic Craft Aesthetic",
+        description:
+          "Eco-inspired wood finish frames crafted for creative individuals who love timeless shapes.",
+        image: "/images/lenses/round-wood.png",
+      },
+      {
+        name: "Matte Olive",
+        title: "Earthy Modern Expression",
+        description:
+          "Subtle greenish tones for those who prefer understated yet expressive fashion.",
+        image: "/images/lenses/round-olive.png",
+      },
+      {
+        name: "Gloss Amber",
+        title: "Retro Shine Reimagined",
+        description:
+          "Warm amber-toned finish delivering a perfect mix of retro and contemporary feel.",
+        image: "/images/lenses/round-amber.png",
+      },
+    ],
+  },
 ];
+
+
+
+
 
 export {
  navLinks,
+ allLenses,
 collections,
  services,
  profileLists,
  featureLists,
  goodLists,
- openingHours,
- storeInfo,
- socials,
- sliderLists,
+
 };
