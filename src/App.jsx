@@ -7,6 +7,7 @@ import About from './components/About';
 import Vision from './components/Vision';
 import Menu from './components/Menu';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
       <Vision />
       <Menu />
       <Contact />
+      <Footer />
     </main>
   )
 }

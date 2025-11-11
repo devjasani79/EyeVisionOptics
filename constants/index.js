@@ -96,7 +96,7 @@ const storeInfo = {
     "Shop No 3, Samadhan Building, 759/35, Bhandarkar Rd, near Oakwood Hotel, Deccan Gymkhana, Pune, Maharashtra 411004",
   location: "Baker’s Basket Complex, Deccan Gymkhana",
   contact: {
-    phone: "093722 24060",
+    phone: "+91 93722 24060",
     email: "eyevisionoptics@gmail.com",
   },
 };
