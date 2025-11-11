@@ -132,7 +132,7 @@ body {
 
 
 
-                .view-cocktails {
+                .view-lenses {
                     @apply space-y-5 text-lg lg:max-w-2xs md:max-w-xs w-full;
 
                     p {
@@ -337,7 +337,7 @@ body {
 
      
 
-        .cocktail-tabs {
+        .lense-tabs {
             @apply grid md:grid-cols-4 grid-cols-2 md:gap-20 gap-10 sm:mb-32 mb-20 relative z-10 md:max-w-6xl md:mx-auto;
 
             button {

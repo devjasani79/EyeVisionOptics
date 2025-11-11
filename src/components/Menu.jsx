@@ -40,7 +40,7 @@ const Menu = () => {
             { opacity: 1, y: 0 }
         )
             .fromTo(
-                '.cocktail img',
+                '.vision img',
                 { opacity: 0, y: -10, scale: 0.96 },
                 { opacity: 1, y: 0, scale: 1, duration: 0.95 },
                 '<'
@@ -58,7 +58,7 @@ const Menu = () => {
             </h1>
 
             {/* Main Frames */}
-            <nav className="cocktail-tabs grid md:grid-cols-4 grid-cols-2 md:gap-20 gap-10 mb-20 relative z-10 md:max-w-6xl md:mx-auto">
+            <nav className="lense-tabs grid md:grid-cols-4 grid-cols-2 md:gap-20 gap-10 mb-20 relative z-10 md:max-w-6xl md:mx-auto">
                 {allLenses.map((lens, index) => {
                     const isActive = index === currentMain;
                     return (
@@ -77,20 +77,20 @@ const Menu = () => {
                 })}
             </nav>
 
-            <div className="content flex flex-col justify-between items-center container mx-auto relative">
+            <div className="content flex flex-row items-center justify-center gap-8 lg:gap-12 container mx-auto relative flex-wrap lg:flex-nowrap">
                 {/* Image */}
-                <div className="cocktail flex justify-center">
+                <div className="cocktail flex justify-center shrink-0 w-full lg:w-auto">
                     {currentVariant?.image && (
                         <img
                             src={currentVariant.image}
                             alt={currentVariant.name || currentLens.name}
-                            className="object-contain max-h-[420px] rounded-2xl shadow-xl transition-all duration-700"
+                            className="object-contain max-h-[420px] md:max-h-80px lg:max-h-[280px] rounded-2xl shadow-xl transition-all duration-700"
                         />
                     )}
                 </div>
 
                 {/* Info */}
-                <div className="recipe text-center mt-10">
+                <div className="recipe text-center lg:text-left w-full lg:w-auto flex-1">
                     <div ref={contentRef} className="info">
                         <p className="text-[#0078FF] font-semibold tracking-wide uppercase">
                             Frame Type:
@@ -104,13 +104,13 @@ const Menu = () => {
                         <h2 className="text-3xl md:text-4xl font-serif text-white mb-3">
                             {currentVariant?.title ?? currentLens.title}
                         </h2>
-                        <p className="max-w-2xl mx-auto text-white/80 text-lg leading-relaxed">
+                        <p className="max-w-2xl lg:max-w-xl mx-auto lg:mx-0 text-white/80 text-lg leading-relaxed">
                             {currentVariant?.description ?? currentLens.description}
                         </p>
                     </div>
 
                     {/* Sub Variants */}
-                    <div className="sub-variants mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
+                    <div className="sub-variants mt-8 flex flex-wrap justify-center lg:justify-start gap-3 md:gap-4">
                         {currentLens.variants?.map((variant, index) => {
                             const isActive = index === currentSub;
                             return (

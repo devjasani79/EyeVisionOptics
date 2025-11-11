@@ -43,7 +43,7 @@ const Vision = () => {
 		 <div className="vision-img">
 			<img
 				src="/images/vision/under-img1.jpg"
-				alt="cocktail"
+				alt="underimg"
 				className="abs-center masked-img size-full object-contain"
 			/>
 		 </div>
